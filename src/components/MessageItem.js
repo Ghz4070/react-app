@@ -1,10 +1,12 @@
 import React from 'react'
 
+const styleLi = { marginBottom: 10,backgroundColor: "lightblue", padding: 10, borderRadius: 10 }
+
 const MessageItem = (props) => {
     return (
-        <li>
-            <span>user : {props.message.user}</span>
-            <div>message : {props.message.msg}</div><br></br><hr></hr>
+        <li style={styleLi}>
+            <span>@{props.message.user}</span>
+            <div>– {props.message.msg} -</div>
         </li>
     );
 };

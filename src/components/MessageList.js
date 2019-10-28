@@ -1,6 +1,5 @@
 import React from 'react'
 import MessageItem from './MessageItem'
-import MessageBar from './MessageBar'
 
 class MessageList extends React.Component {
     state = {
@@ -11,12 +10,14 @@ class MessageList extends React.Component {
         ]
     };
 
-    render(){ 
-       return(
-           <ul>
-               {this.state.messages.map(message => <MessageItem message={message} />)}
-           </ul>
-       ) 
+    render() {
+        return (
+            <ul>
+                {this.state.messages.map((message, index) => {
+                    return <MessageItem key={index} message={message} />
+                })}
+            </ul>
+        )
     }
 }
 

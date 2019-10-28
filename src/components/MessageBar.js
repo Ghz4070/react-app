@@ -7,7 +7,7 @@ class MessageBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = { message: '' };
-        
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -18,10 +18,12 @@ class MessageBar extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        let a = this.state.message
-        console.log(a);
-        // alert('A name was submitted: ' + this.state.message);
-        // event.preventDefault();
+        if (this.state.message !== '') {
+            let a = this.state.message
+            console.log(a);
+        } else {
+            alert('Veuillez saisir quelque chose');
+        }
     }
 
     render() {

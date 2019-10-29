@@ -1,6 +1,9 @@
 import React from 'react'
 import MessageList from './MessageList'
 import MessageBar from './MessageBar'
+import { connect } from 'react-redux'
+import { store } from '../redux/Store'
+
 
 class Chat extends React.Component {
     constructor(props) {

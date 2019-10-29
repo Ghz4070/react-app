@@ -1,8 +1,8 @@
-const ADD_TODO = 'ADD_TODO'
+export const ADD_MESSAGE = 'ADD_MESSAGE'
 
-export function addTodo(text) {
+export function addMessage(text) {
     return {
-        type: ADD_TODO,
+        type: ADD_MESSAGE,
         text
     }
 }

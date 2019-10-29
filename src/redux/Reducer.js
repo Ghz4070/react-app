@@ -1,23 +1,20 @@
 import { combineReducers } from 'redux'
-import { addTodo } from './Action'
+import { ADD_MESSAGE } from './action'
 
-function todos(state = [], action) {
+function messages(state = [], action) {
     switch (action.type) {
-        case addTodo:
+        case ADD_MESSAGE:
             return [
                 ...state,
-                {
-                    text: action.text,
-                    completed: false
-                }
+                action.text,
             ]
         default:
             return state
     }
 }
 
-const todoApp = combineReducers({
-    todos
+const messageApp = combineReducers({
+    messages
 })
 
-export default todoApp
+export default messageApp

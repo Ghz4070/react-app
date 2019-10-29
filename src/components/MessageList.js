@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import MessageItem from './MessageItem'
+import { connect } from 'react-redux'
 
-class MessageList extends React.Component {
-    
+class MessageList extends Component {
+
     render() {
         return (
             <ul>
@@ -14,4 +15,12 @@ class MessageList extends React.Component {
     }
 }
 
-export default MessageList;     
+const mapStateToProps = (state /*, ownProps*/) => {
+    return {
+        msg: state.messages
+    }
+}
+
+const connectComponent = connect(mapStateToProps)
+
+export default connectComponent(MessageList);     

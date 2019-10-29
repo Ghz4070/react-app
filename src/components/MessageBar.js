@@ -1,26 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { addMessage } from './../redux/action'
 
 const styleInput = { borderRadius: 5, border: 'none', fontSize: 12, padding: 10, marginRight: 10 };
 const styleButton = { cursor: 'pointer', borderRadius: 5, backgroundColor: "lightblue", fontSize: 12, fontWeight: 'bold', padding: 10, width: 100 };
 
-class MessageBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { message: '' };
+class MessageBar extends Component {
+    state = { message: '' };
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleChange(event) {
+    handleChange = (event) => {
         this.setState({ message: event.target.value });
     }
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
         if (this.state.message !== '') {
             this.props.sendMessage(this.state.message)
-            this.state.message = '';
+            this.setState({message: ''});
         } else {
             alert('Veuillez saisir quelque chose');
         }
@@ -36,4 +32,17 @@ class MessageBar extends React.Component {
     }
 }
 
-export default MessageBar;
+const mapDispatchToProps = dispatch => {
+    return {
+        sendMessage: (message) => {
+            dispatch(addMessage(message)); // l'action
+        }
+    }
+}
+
+const connectComponent = connect(
+    null,
+    mapDispatchToProps
+)
+
+export default connectComponent(MessageBar);

@@ -1,4 +1,5 @@
 import { createStore } from 'redux'
-import todoApp from '../redux/Reducer'
+import messageApp from './reducer'
 
-const store = createStore(todoApp)
+const store = createStore(messageApp);
+

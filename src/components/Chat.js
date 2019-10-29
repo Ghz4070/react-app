@@ -1,31 +1,18 @@
 import React from 'react'
 import MessageList from './MessageList'
 import MessageBar from './MessageBar'
-import { connect } from 'react-redux'
-import { store } from '../redux/Store'
-
 
 class Chat extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { msg: [] };
-    }
-
-    sendMessage = (message) => {
-        this.setState({ msg: this.state.msg.concat([message]) });
-    }
-
     render() {
         return (
             <div className="App">
                 <header className="App-header">
-                    <MessageList msg={this.state.msg} />
-                    <MessageBar sendMessage={this.sendMessage} />
+                    <MessageList />
+                    <MessageBar />
                 </header>
             </div>
         );
     }
-
 }
 
 export default Chat;

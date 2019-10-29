@@ -19,8 +19,8 @@ class MessageBar extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         if (this.state.message !== '') {
-            let a = this.state.message
-            console.log(a);
+            this.props.sendMessage(this.state.message)
+            this.state.message = '';
         } else {
             alert('Veuillez saisir quelque chose');
         }

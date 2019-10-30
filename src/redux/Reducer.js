@@ -6,7 +6,7 @@ function messages(state = [], action) {
         case ADD_MESSAGE:
             return [
                 ...state,
-                action.text,
+                action.messages,
             ]
         default:
             return state

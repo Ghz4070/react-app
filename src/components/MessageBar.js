@@ -16,7 +16,7 @@ class MessageBar extends Component {
         event.preventDefault();
         if (this.state.message !== '') {
             this.props.sendMessage(this.state.message)
-            this.setState({message: ''});
+            this.setState({ message: '' });
         } else {
             alert('Veuillez saisir quelque chose');
         }

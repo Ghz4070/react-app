@@ -12,7 +12,6 @@ class MessageList extends Component {
         //onsole.log(this.props);
         return (
             <ul>
-                <li>Aucun Message</li>
                 {this.props.msg.messages.map((message, index) => {
                     return <MessageItem key={index} message={message} />
                 })}

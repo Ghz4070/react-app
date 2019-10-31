@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux'
 import { store } from './redux/store';
 import Chat from './components/Chat';
-import Login from './componentsLogin/Login';
+import Settings from './containers/Settings';
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,7 +30,7 @@ function App() {
           rend le premier qui correspond à l'URL courante. */}
         <Switch>
           <Route path="/Settings">
-            <Login />
+            <Settings />
           </Route>
           <Route path="/chat">
             <Provider store={store}><Chat /></Provider>

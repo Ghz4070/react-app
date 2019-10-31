@@ -1,7 +1,9 @@
 import axios from 'axios'
 import * as action from './constantes'
+import { socket } from './../../services/websocket'
 
 export const addMessage = (message) => {
+    socket.send(JSON.stringify(message));
     return {
         type: action.ADD_MESSAGE,
         message: {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getMessages } from '../action/messages'
+import { getMessages } from '../redux/action/messages'
 import MessageList from './../components/MessageList'
 
 class MessageListContainer extends Component {

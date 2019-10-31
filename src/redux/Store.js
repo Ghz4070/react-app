@@ -1,12 +1,12 @@
-import { messageApp } from './../reducers/index'
+import { messageApp } from './../redux/reducers/index'
 import { createStore, applyMiddleware, compose } from 'redux';
-import { logger, crashReporter } from './middleware/logger';
+import { logger } from './middleware/logger';
 import thunk from 'redux-thunk';
 
 export const store = createStore(
     messageApp,
     compose(
-        applyMiddleware(thunk, logger, crashReporter),
+        applyMiddleware(thunk, logger),
         window.devToolsExtension() ?
             window.devToolsExtension() : f => f
     )

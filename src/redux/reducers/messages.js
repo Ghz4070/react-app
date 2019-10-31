@@ -9,7 +9,6 @@ const stateInitial = {
 const messages = (state = stateInitial, action) => {
     switch (action.type) {
         case actions.ADD_MESSAGE:
-            // console.log(state)
             return {
                 ...state,
                 messages: [

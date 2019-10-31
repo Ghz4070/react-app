@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux'
 import { store } from '../redux/store';
 import Chat from './Chat';
-import Settings from '../containers/Settings';
+import SettingsContainer from './../containers/SettingsContainer';
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,13 +10,14 @@ import {
   Link
 } from "react-router-dom";
 import './../assets/style/App.css';
+// import { socket } from './../services/websocket'
 
 function App() {
   return (
     <Router>
       <div>
         <nav>
-          <ul>            
+          <ul>
             <li>
               <Link to="/Settings">Settings</Link>
             </li>
@@ -30,7 +31,7 @@ function App() {
           rend le premier qui correspond à l'URL courante. */}
         <Switch>
           <Route path="/Settings">
-            <Settings />
+            <SettingsContainer />
           </Route>
           <Route path="/chat">
             <Provider store={store}><Chat /></Provider>

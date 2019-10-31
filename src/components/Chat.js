@@ -1,12 +1,14 @@
 import React from 'react'
 import MessageListContainer from './../containers/MessageListContainer'
 import MessageBar from './MessageBar'
+import logo from './../assets/logo.svg'
 
 class Chat extends React.Component {
     render() {
         return (
             <div className="App">
                 <header className="App-header">
+                    <img src={logo} className="App-logo" alt="logo" />
                     <MessageListContainer />
                     <MessageBar />
                 </header>

@@ -15,13 +15,14 @@ const stateInitial = {
 const messages = (state = stateInitial, action) => {
     switch (action.type) {
         case ADD_MESSAGE:
-            console.log(state)
+            // console.log(state)
             return {
                 ...state,
                 messages: [
                     ...state.messages,
                     action.message,
-                ]                
+
+                ]
             }
         case GET_MESSAGES_PENDING:
             return {

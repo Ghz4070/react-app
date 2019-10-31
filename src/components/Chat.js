@@ -1,5 +1,5 @@
 import React from 'react'
-import MessageList from './MessageList'
+import MessageListContainer from './../containers/MessageListContainer'
 import MessageBar from './MessageBar'
 
 class Chat extends React.Component {
@@ -7,7 +7,7 @@ class Chat extends React.Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <MessageList />
+                    <MessageListContainer />
                     <MessageBar />
                 </header>
             </div>

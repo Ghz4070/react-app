@@ -18,7 +18,7 @@ function App() {
         <nav>
           <ul>            
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="/Settings">Settings</Link>
             </li>
             <li>
               <Link to="/chat">Chat</Link>
@@ -29,7 +29,7 @@ function App() {
         {/* A <Switch> regarde à travers ses enfants <Route> et
           rend le premier qui correspond à l'URL courante. */}
         <Switch>
-          <Route path="/login">
+          <Route path="/Settings">
             <Login />
           </Route>
           <Route path="/chat">

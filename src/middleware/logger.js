@@ -1,7 +1,7 @@
 export const logger = store => next => action => {
-    console.log('dispatching', action)
+    // console.log('dispatching', action)
     let result = next(action)
-    console.log('next state', store.getState())
+    // console.log('next state', store.getState())
     return result
   }
   
@@ -9,7 +9,7 @@ export const logger = store => next => action => {
     try {
       return next(action)
     } catch (err) {
-      console.error('Caught an exception!', err)
+      // console.error('Caught an exception!', err)
       window.Raven.captureException(err, {
         extra: {
           action,

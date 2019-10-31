@@ -1,10 +1,4 @@
-import { combineReducers } from 'redux'
-import {
-    ADD_MESSAGE,
-    GET_MESSAGES_PENDING,
-    GET_MESSAGES_SUCCESS,
-    GET_MESSAGES_ERROR
-} from './action'
+import * as actions from './../action/constantes';
 
 const stateInitial = {
     messages: [],
@@ -14,7 +8,7 @@ const stateInitial = {
 
 const messages = (state = stateInitial, action) => {
     switch (action.type) {
-        case ADD_MESSAGE:
+        case actions.ADD_MESSAGE:
             // console.log(state)
             return {
                 ...state,
@@ -24,12 +18,12 @@ const messages = (state = stateInitial, action) => {
 
                 ]
             }
-        case GET_MESSAGES_PENDING:
+        case actions.GET_MESSAGES_PENDING:
             return {
                 ...state,
                 pending: false,
             };
-        case GET_MESSAGES_SUCCESS:
+        case actions.GET_MESSAGES_SUCCESS:
             return {
                 ...state,
                 pending: true,
@@ -38,7 +32,7 @@ const messages = (state = stateInitial, action) => {
                 ],
                 error: null
             };
-        case GET_MESSAGES_ERROR:
+        case actions.GET_MESSAGES_ERROR:
             return {
                 ...state,
                 pending: true,
@@ -49,6 +43,4 @@ const messages = (state = stateInitial, action) => {
     }
 };
 
-export const messageApp = combineReducers({
-    messages
-})
+export default messages;

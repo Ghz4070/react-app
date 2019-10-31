@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addMessage } from './../redux/action'
+import { addMessage } from '../action/messages'
 
 const styleInput = { borderRadius: 5, border: 'none', fontSize: 12, padding: 10, marginRight: 10 };
 const styleButton = { cursor: 'pointer', borderRadius: 5, backgroundColor: "lightblue", fontSize: 12, fontWeight: 'bold', padding: 10, width: 100 };

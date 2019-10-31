@@ -1,15 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux'
-import { store } from './redux/store';
-import Chat from './components/Chat';
-import Settings from './containers/Settings';
+import { store } from '../redux/store';
+import Chat from './Chat';
+import Settings from '../containers/Settings';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import './App.css';
+import './../assets/style/App.css';
 
 function App() {
   return (

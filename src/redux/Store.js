@@ -1,6 +1,6 @@
-import { messageApp } from './reducer'
+import { messageApp } from './../reducers/index'
 import { createStore, applyMiddleware, compose } from 'redux';
-import { logger, crashReporter } from './../middleware/logger';
+import { logger, crashReporter } from './middleware/logger';
 import thunk from 'redux-thunk';
 
 export const store = createStore(

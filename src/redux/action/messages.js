@@ -3,7 +3,15 @@ import * as action from './constantes'
 import { socket } from './../../services/websocket'
 
 export const addMessage = (message) => {
-    socket.send(JSON.stringify(message));
+
+    let objectMessage = {
+        "type": "ADD_MESSAGE",
+        "username": "toto",
+        "message": message
+    }
+
+    socket.send(JSON.stringify(objectMessage));
+    socket.close();
     return {
         type: action.ADD_MESSAGE,
         message: {
